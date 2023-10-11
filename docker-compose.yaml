@@ -1,7 +1,7 @@
 version: '3'
 services:
   catalog:
-    image: ${APP_NAME}:${APP_VERSION}
+    image: fcuenca4/${APP_NAME}:${APP_VERSION}
     build:
       context: .
       dockerfile: Dockerfile

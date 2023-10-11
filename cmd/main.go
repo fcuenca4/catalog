@@ -14,8 +14,6 @@ func main() {
 
 	// Define a handler function
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		// Print "Hello, World!"
-		fmt.Fprintln(w, "Hello, World!")
 
 		// Print environment variables
 		env := os.Environ()
@@ -23,6 +21,9 @@ func main() {
 		for _, v := range env {
 			fmt.Fprintln(w, v)
 		}
+
+		fmt.Fprintf(w, "Hello from %s!\n", os.Getenv("APP_NAME"))
+
 	})
 
 	// Set up and start the HTTP server

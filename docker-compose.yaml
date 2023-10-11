@@ -1,0 +1,13 @@
+version: '3'
+services:
+  catalog:
+    image: ${APP_NAME}:${APP_VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+        NAME: ${APP_NAME}
+        PORT: ${APP_PORT}
+        VERSION: ${APP_VERSION}
+    ports:
+      - ${APP_PORT}:${APP_PORT}
